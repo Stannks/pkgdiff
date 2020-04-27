@@ -1,0 +1,17 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a device; this may
+# be used with UUID= as a more robust way to name devices that works even if
+# disks are added and removed. See fstab(5).
+#
+# <file system>                              <mount point>  <type>  <options>                                 <dump>  <pass>
+PARTUUID=dcf10f55-5436-432d-837b-8c13faae8f7a /boot          vfat    defaults                                   0       2
+PARTUUID=36ebc63e-b5be-441b-bd7f-edab62f215e4 /              ext4    defaults,noatime,discard                   0       1
+PARTUUID=4567eab6-5937-4b51-a07b-c8ac5fcfd34d none           swap    defaults,noatime,discard                   0       0
+tmpfs                                         /tmp           tmpfs   defaults,noatime,mode=1777                 0       0
+
+# Storage Drive
+UUID=AE6495BF64958B2B                     /storage       ntfs-3g uid=1000,gid=1000,dmask=027,fmask=137,exec 0       2
+
+# Playstation SSD
+#UUID=17e152c9-fbc3-4b06-a2ec-62086c505f79 /ssd ext4 defaults,noatime,discard 0 3
